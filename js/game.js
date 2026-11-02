@@ -29,7 +29,7 @@
 <div class="acts"><button id="bMain"></button><button id="bPump" class="alt">Качать нефть</button><button id="bSell" class="alt">Продать нефть</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div></div></div>
 <div class="shop" id="shop"></div>
-<div class="card" style="margin-top:12px"><b>Бонусы за прохождение</b><div id="bonuses"></div><p class="sub" style="margin:10px 0 0;font-size:13px">Коды демонстрационные: замените на настоящие акции СибОйл.</p><button class="alt" id="bReset" style="margin-top:10px">Начать заново</button></div>`;
+<div class="card" style="margin-top:12px"><b>Бонусы за прохождение</b><div id="bonuses"></div><p class="sub" style="margin:10px 0 0;font-size:13px"></p><button class="alt" id="bReset" style="margin-top:10px">Начать заново</button></div>`;
 
   const KEY = "siboil-game2";
   const fresh = () => ({ lvl: 1, depth: 0, crude: 0, fuel: 0, money: 0, totC: 0, totF: 0, del: 0, done: [], lv: { bit: 0, pump: 0, well: 0, price: 0, col: 0, cat: 0, truck: 0, fleet: 0 } });
