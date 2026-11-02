@@ -39,7 +39,6 @@ export async function initCalc() {
     const r = $('cres'), d = +$('cdist').value, c = +$('ccons').value, t = +$('ctank').value, m = +$('cmar').value / 100, n = +$('ctrip').value;
     if (!(d > 0 && c > 0 && t > 0)) { r.className = 'res'; r.textContent = 'Выберите разные точки и заполните расход и бак.'; return; }
     const h = Math.round(+$('cpct').value * t / 10) / 10, need = d * n * c / 100 * (1 + m), lack = need - h;
-    const src = approx ? ' Расстояние приблизительное (по прямой с поправкой): точного значения в таблице нет.' : ' Расстояние взято из таблицы дорог.';
     if (lack <= 0) { r.className = 'res ok'; r.innerHTML = `<strong>Хватит</strong>Нужно ${need.toFixed(1)} л, в баке ${h} л, останется около ${(-lack).toFixed(1)} л.${src}`; }
     else {
       r.className = 'res no';
