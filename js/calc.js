@@ -39,11 +39,11 @@ export async function initCalc() {
     const r = $('cres'), d = +$('cdist').value, c = +$('ccons').value, t = +$('ctank').value, m = +$('cmar').value / 100, n = +$('ctrip').value;
     if (!(d > 0 && c > 0 && t > 0)) { r.className = 'res'; r.textContent = 'Выберите разные точки и заполните расход и бак.'; return; }
     const h = Math.round(+$('cpct').value * t / 10) / 10, need = d * n * c / 100 * (1 + m), lack = need - h;
-    if (lack <= 0) { r.className = 'res ok'; r.innerHTML = `<strong>Хватит</strong>Нужно ${need.toFixed(1)} л, в баке ${h} л, останется около ${(-lack).toFixed(1)} л.${src}`; }
+    if (lack <= 0) { r.className = 'res ok'; r.innerHTML = `<strong>Хватит</strong>Нужно ${need.toFixed(1)} л, в баке ${h} л, останется около ${(-lack).toFixed(1)} л.`; }
     else {
       r.className = 'res no';
       r.innerHTML = `<strong>Не хватит: нужно ещё ${lack.toFixed(1)} л</strong>Нужно ${need.toFixed(1)} л, в баке ${h} л, хватит на ${Math.round(h / (c * (1 + m)) * 100)} км.` +
-        (need > t ? ` Бак вмещает ${t} л, по пути нужна заправка.` : ` Заправьтесь минимум на ${Math.ceil(lack)} л.`) + src;
+        (need > t ? ` Бак вмещает ${t} л, по пути нужна заправка.` : ` Заправьтесь минимум на ${Math.ceil(lack)} л.`);
     }
   }
 
