@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СибОйл: вход для сотрудников</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><div class="w"><h1>Кабинет сотрудника</h1><nav><a href="index.html">На главную</a></nav></div></header>
+<main>
+<p id="msg" role="status" aria-live="polite" style="max-width:960px;margin:0 auto 12px"></p>
+
+<section id="login" hidden><div class="card" style="max-width:420px">
+<form id="loginform"><label>Электронная почта (логин)<input id="email" type="email" autocomplete="username" required></label>
+<label>Пароль<input id="pass" type="password" autocomplete="current-password" required></label><button>Войти</button></form></div></section>
+
+<div id="panel" hidden>
+<section><div class="card"><span id="who"></span> <button class="alt" id="logout" style="float:right">Выйти</button></div></section>
+
+<section id="queue-ed" hidden><h2>Очередь на АЗС</h2><div class="card" id="qlist"></div></section>
+
+<section id="mgr" hidden>
+<h2>Цены</h2><p class="sub">Пустое поле значит, что топлива на АЗС нет. Изменяются только изменённые поля.</p>
+<div class="card tw"><table><thead><tr><th>№</th><th>Адрес</th><th>АИ-98</th><th>АИ-95</th><th>АИ-92</th><th>92 Экто</th><th>ДТ</th></tr></thead><tbody id="ptb"></tbody></table></div>
+<p><button id="saveprices">Сохранить цены</button></p>
+<h2>Расстояния по дорогам</h2><p class="sub">Добавляйте пары пунктов. Калькулятор сам складывает расстояния через промежуточные пункты.</p>
+<div class="card"><div class="row"><label>От<select id="d-a"></select></label><label>До<select id="d-b"></select></label>
+<label>Километров<input id="d-km" type="number" min="1" step="0.1" inputmode="decimal"></label></div><button id="adddist">Сохранить расстояние</button></div>
+</section>
+</div>
+</main>
+<script type="module" src="js/staff.js"></script>
+</body>
+</html>
