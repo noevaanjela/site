@@ -51,3 +51,19 @@ max-width:960px;margin:0 auto;color:var(--ink);font:16px/1.5 system-ui,Arial,san
 #sib-game .bonus:last-child{border:0}
 #sib-game .bonus.got b{color:var(--ok)}
 #sib-game .code{font-family:ui-monospace,Menlo,monospace;background:var(--bg);padding:2px 8px;border-radius:6px}
+/* v2: уровни, сцены, читаемые кнопки */
+#sib-game .steps{display:flex;gap:6px;flex-wrap:wrap;list-style:none;padding:0;margin:0 0 12px}
+#sib-game .steps li{padding:6px 14px;border-radius:99px;border:1.5px solid var(--line);color:var(--mut);font-size:14px}
+#sib-game .steps li.on{background:var(--red);border-color:var(--red);color:#fff;font-weight:600}
+#sib-game .steps li.done{border-color:var(--ok);color:var(--ok);font-weight:600}
+#sib-game .rig button.alt{color:#fff;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.6)}
+#sib-game .rig button:disabled{opacity:.6;cursor:not-allowed}
+#sib-game .rig button[hidden]{display:none}
+#sib-game .toast{margin-top:10px;padding:10px 12px;border-radius:10px;background:#1f9d55;color:#fff;font-weight:600;font-size:14px}
+#sib-game .toast:empty{display:none}
+#sib-game #l2,#sib-game #l3{display:none}
+#sib-game #sc[data-l="2"] #l2,#sib-game #sc[data-l="3"] #l3{display:inline}
+#sib-game #sc[data-l="2"] #l1,#sib-game #sc[data-l="3"] #l1{display:none}
+#sib-game .fl{transform-box:fill-box;transform-origin:50% 100%;animation:fl .5s ease-in-out infinite alternate}
+@keyframes fl{to{transform:scale(1.2,.85)}}
+@media(prefers-reduced-motion:reduce){#sib-game .fl{animation:none}}
